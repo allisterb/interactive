@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <LangVersion>preview</LangVersion>
     <PackageId Condition="'$(PackageId)'==''">Microsoft.DotNet.Interactive.Documents</PackageId>
   </PropertyGroup>
@@ -23,10 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" />
     <PackageReference Include="Microsoft.Bcl.HashCode" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" />
-    <PackageReference Include="System.Collections.Immutable" />
   </ItemGroup>
 
 </Project>

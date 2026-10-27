@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net10.0</TargetFrameworks>
@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Runtime.Loader" />
     <PackageReference Include="System.Reactive" />
     <PackageReference Include="Microsoft.CodeAnalysis" />
     <PackageReference Include="PocketLogger" >
@@ -32,8 +31,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Text.Json" />
-    <PackageReference Include="System.Diagnostics.DiagnosticSource" />
   </ItemGroup>
 
   <ItemGroup>
