@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.DotNet.Interactive.Commands;
 using Microsoft.DotNet.Interactive.CSharp;
 using Microsoft.DotNet.Interactive.Events;
-using Microsoft.DotNet.Interactive.PowerShell;
+
 
 namespace Microsoft.DotNet.Interactive.Jupyter;
 
@@ -18,21 +18,7 @@ public class JupyterClientKernelExtension
             root.Add(
                 new JavaScriptKernel(),
                 new[] { "js" });
-
-            root.VisitSubkernels(k =>
-            {
-                switch (k)
-                {
-                    case CSharpKernel csharpKernel:
-                        csharpKernel.UseJupyterHelpers();
-                        break;
-
-                    case PowerShellKernel powerShellKernel:
-                        powerShellKernel.UseJupyterHelpers();
-                        break;
-                }
-            });
-
+           
             root.SetDefaultTargetKernelNameForCommand(
                 typeof(RequestInput),
                 root.Name);

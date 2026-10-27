@@ -13,7 +13,7 @@ using Microsoft.DotNet.Interactive.Commands;
 using Microsoft.DotNet.Interactive.CSharp;
 using Microsoft.DotNet.Interactive.Directives;
 using Microsoft.DotNet.Interactive.Events;
-using Microsoft.DotNet.Interactive.PowerShell;
+
 using Microsoft.DotNet.Interactive.Formatting;
 using static Microsoft.DotNet.Interactive.Formatting.PocketViewTags;
 
@@ -31,26 +31,7 @@ public static class KernelExtensions
         return kernel;
     }
 
-    public static CSharpKernel UseJupyterHelpers(
-        this CSharpKernel kernel)
-    {
-        var command = new SubmitCode($@"
-#r ""{typeof(TopLevelMethods).Assembly.Location.Replace("\\", "/")}""
-using static {typeof(TopLevelMethods).FullName};
-");
-
-        kernel.DeferCommand(command);
-        return kernel;
-    }
-
-    public static PowerShellKernel UseJupyterHelpers(
-        this PowerShellKernel kernel)
-    {
-        // TODO: (UseJupyterHelpers) remove Powershell package reference?
-        kernel.ReadInput = TopLevelMethods.input;
-        kernel.ReadPassword = TopLevelMethods.password;
-        return kernel;
-    }
+  
 
     private static T UseMarkdown<T>(this T kernel)
         where T : Kernel
